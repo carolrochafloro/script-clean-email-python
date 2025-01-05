@@ -1,8 +1,6 @@
 import imaplib
 import json
 from criteria import delete
-import time
-import schedule
 
 with open('config.json') as config_file:
     config = json.load(config_file)
@@ -17,7 +15,7 @@ def login(user, password):
     return mail
     
 def delete_email(mail, delete):
-     
+     print('Starting delete function')
      for email in delete:
         criteria = f'(FROM "{email}")'
         mail.select('inbox')
